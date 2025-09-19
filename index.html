@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEAK Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- --- Page 1: Hover Album --- -->
+  <section class="hover-album">
+    <img src="asset/images/1.jpg" alt="1">
+    <img src="asset/images/2.jpg" alt="2">
+    <img src="asset/images/3.jpg" alt="3">
+    <img src="asset/images/4.jpg" alt="4">
+    <img src="asset/images/5.jpg" alt="5">
+  </section>
+
+  <!-- --- Page 2: Hero / Two Column --- -->
+  <section class="hero-two-column">
+  <div class="left-hero">
+    <div class="scrollable-image">
+      <img src="asset/images/6.jpg" alt="Vertical Image">
+    </div>
+  </div>
+  <div class="right-hero">
+    <img src="asset/images/7.jpg" alt="Small Image">
+    <p>  .</p>
+  </div>
+</section> 
+
+<!-- PEAK Section -->
+<section class="peak-section">
+  <div class="peak-left">
+    <span>P</span>
+    <span>E</span>
+    <span>A</span>
+    <span>K</span>
+  </div>
+  <div class="peak-right">
+    <video autoplay loop muted playsinline>
+      <source src="asset/vid/jojo.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
+</section>
+
+ <!-- UPCOMING SECTION -->
+  <section class="upcoming-section">
+    <div class="upcoming-container">
+      <h1 class="upcoming-title">
+        <a href="https://www.netflix.com/search?q=steel%20ball%20run" target="_blank">
+          Steel Ball Run – Upcoming
+        </a>
+      </h1>
+      <p class="upcoming-desc">
+        The long-awaited adaptation is almost here. Click the video to play audio!
+      </p>
+
+      <div class="video-wrapper">
+        <video id="sbr-video" autoplay muted loop playsinline>
+          <source src="asset/vid/sbr.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINK TO ROOT JS -->
+  <script src="script.js"></script>
+
+<!-- ===== COMMUNITY SECTION ===== -->
+<section id="community" class="community-section">
+  <!-- Blurred Background -->
+  <div class="community-bg">
+    <img src="asset/images/bg.jpg" alt="Community Background">
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="community-content content-section">
+    <!-- Section Title -->
+    <h2 class="community-section-title">Community</h2>
+
+    <!-- Main JoJo-ish Title -->
+    <h1 class="community-title">JoJOLaNds</h1>
+
+    <!-- Description -->
+    <p class="community-desc">
+      JoJOLaNds is our community where different Stand Users across the world communicate and talk about PEAK together.
+    </p>
+
+    <!-- Social Links with Images -->
+    <div class="social-icons">
+      <a href="#" target="_blank" class="icon icon-btn pop">
+        <img src="asset/images/community/m.jpg" alt="Music">
+      </a>
+      <a href="#" target="_blank" class="icon icon-btn pop">
+        <img src="asset/images/community/dc.jpg" alt="Discord">
+      </a>
+      <a href="https://ig.me/j/AbZYVcacQ8dxEwM8/" target="_blank" class="icon icon-btn pop">
+        <img src="asset/images/community/ig.jpg" alt="Instagram">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FULLPAGE VIDEO SECTION ===== -->
+<section id="fullpage-video" class="fullpage-video-section">
+  <!-- Video -->
+  <video id="mainVideo" class="full-video" autoplay loop muted>
+    <source src="asset/vid/video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Floating Landing Page Icon -->
+  <a href="https://landing-page-fawn-pi-94.vercel.app/" target="_blank" class="landing-icon">
+    <img src="asset/images/vergil.jpg" alt="Landing Page">
+  </a>
+
+  <!-- Social Icons Bottom Left -->
+  <div class="video-social-icons">
+    <a href="https://downbad.hu" target="_blank" class="icon icon-btn pop">
+      <img src="asset/images/community/dc.jpg" alt="Discord">
+    </a>
+    <a href="https://www.instagram.com/v3rg1ls0uske?igsh=cGo1M3NpdW9qNDBh" target="_blank" class="icon icon-btn pop">
+      <img src="asset/images/community/ig.jpg" alt="Instagram">
+    </a>
+  </div>
+
+  <!-- Inline JS -->
+  <script>
+    const video = document.getElementById('mainVideo');
+
+    // Toggle audio on click
+    video.addEventListener('click', () => {
+      if(video.muted){
+        video.muted = false; // play audio
+      } else {
+        video.muted = true; // mute
+      }
+    });
+  </script>
+</section>
+  
+</body>
+</html>
+
+  
