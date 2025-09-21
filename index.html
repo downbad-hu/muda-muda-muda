@@ -9,26 +9,30 @@
 <body>
 
   <!-- --- Page 1: Hover Album --- -->
-  <section class="hover-album">
-    <img src="asset/images/1.jpg" alt="1">
-    <img src="asset/images/2.jpg" alt="2">
-    <img src="asset/images/3.jpg" alt="3">
-    <img src="asset/images/4.jpg" alt="4">
-    <img src="asset/images/5.jpg" alt="5">
-  </section>
+<section id="album" class="album-section">
+  <div id="albumSlider" class="album-slider">
+    <img src="asset/images/1.jpg" class="album-img" alt="Image 1">
+    <img src="asset/images/2.jpg" class="album-img" alt="Image 2">
+    <img src="asset/images/3.jpg" class="album-img" alt="Image 3">
+    <img src="asset/images/4.jpg" class="album-img" alt="Image 4">
+    <img src="asset/images/5.jpg" class="album-img" alt="Image 5">
+  </div>
+</section>
+<script src="script.js"></script>
 
   <!-- --- Page 2: Hero / Two Column --- -->
-  <section class="hero-two-column">
+<section class="hero-two-column">
+  <!-- Left: Vertical Image -->
   <div class="left-hero">
-    <div class="scrollable-image">
-      <img src="asset/images/6.jpg" alt="Vertical Image">
-    </div>
+    <img src="asset/images/6.jpg" alt="Vertical Image" class="vertical-img">
   </div>
+
+  <!-- Right: Small Image + Text -->
   <div class="right-hero">
-    <img src="asset/images/7.jpg" alt="Small Image">
-    <p>  .</p>
+    <img src="asset/images/7.jpg" alt="Small Image" class="small-img">
+    <h2 class="hero-character">Diego Brando</h2>
   </div>
-</section> 
+</section>
 
 <!-- PEAK Section -->
 <section class="peak-section">
@@ -47,28 +51,47 @@
 </section>
 
  <!-- UPCOMING SECTION -->
-  <section class="upcoming-section">
-    <div class="upcoming-container">
-      <h1 class="upcoming-title">
-        <a href="https://www.netflix.com/search?q=steel%20ball%20run" target="_blank">
-          Steel Ball Run – Upcoming
-        </a>
-      </h1>
-      <p class="upcoming-desc">
-        The long-awaited adaptation is almost here. Click the video to play audio!
-      </p>
 
-      <div class="video-wrapper">
-        <video id="sbr-video" autoplay muted loop playsinline>
-          <source src="asset/vid/sbr.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+<section class="upcoming-section">
+  <div class="upcoming-container">
+    <!-- Majestic JoJo-themed clickable title -->
+    <h1 class="upcoming-title">
+      <a href="https://www.netflix.com/search?q=steel%20ball%20run" target="_blank">
+        Steel Ball Run – Upcoming
+      </a>
+    </h1>
+    <p class="upcoming-desc">Click the video to toggle audio. Double-click video for Netflix!</p>
+
+    <div class="video-wrapper" id="sbr-video-container">
+      <video id="sbr-video" autoplay muted loop playsinline>
+        <source src="asset/vid/sbr.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-  </section>
 
-  <!-- LINK TO ROOT JS -->
-  <script src="script.js"></script>
+    <script>
+      const video = document.getElementById('sbr-video');
+
+      // Start muted
+      video.muted = true;
+      video.play().catch(err => console.log("Autoplay blocked:", err));
+
+      // Click to toggle audio
+      video.addEventListener('click', () => {
+        video.muted = !video.muted;
+        if (!video.muted) video.volume = 1;
+      });
+
+      // Double-click opens Netflix
+      video.addEventListener('dblclick', () => {
+        window.open("https://www.netflix.com/search?q=steel%20ball%20run", "_blank");
+      });
+    </script>
+  </div>
+</section>
+
+ 
+ <script src="script.js"></script>
 
 <!-- ===== COMMUNITY SECTION ===== -->
 <section id="community" class="community-section">

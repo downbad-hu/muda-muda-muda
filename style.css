@@ -3,28 +3,63 @@
 body { background:#111; color:#fff; }
 
 /* --- 1. Hover Album (Full Width) --- */
-.hover-album {
-  display: flex;
-  overflow-x: auto;
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.album-section {
   width: 100%;
+  overflow: hidden;
+  background: #111;
   padding: 40px 0;
 }
-.hover-album img {
-  height: 80vh; /* full-height images */
-  width: auto;
-  border-radius: 15px;
-  margin-left: -150px; /* overlap effect */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease, z-index 0.3s ease;
-  cursor: pointer;
-}
-.hover-album img:first-child { margin-left: 50px; z-index: 5; }
-.hover-album img:hover { transform: scale(1.05); z-index: 10; }
 
-/* Scrollbar styling */
-.hover-album::-webkit-scrollbar { height: 12px; }
-.hover-album::-webkit-scrollbar-thumb { background: #555; border-radius: 6px; }
-.hover-album::-webkit-scrollbar-track { background: #222; border-radius: 6px; }
+.album-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden; /* hide scrollbar */
+  padding: 10px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: grab;
+  scroll-behavior: smooth; /* makes the movement silky */
+}
+
+/* Album Images */
+.album-img {
+  min-width: 350px;
+  height: 450px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+}
+
+/* Hover Effects */
+.album-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(255, 0, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .album-img {
+    min-width: 300px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .album-img {
+    min-width: 250px;
+    height: 350px;
+  }
+}
 
 /* --- Hero / Two Column Section --- */
 .hero-two-column {
@@ -64,6 +99,21 @@ body { background:#111; color:#fff; }
   font-size: 1.1rem;
   line-height: 1.6;
   color: #ccc;
+}
+.hero-character {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+  color: #ff00ff;
+  background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255,0,255,0.7), 0 0 30px rgba(0,255,255,0.5);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hero-character:hover {
+  transform: scale(1.1) rotate(-2deg);
+  text-shadow: 0 0 25px rgba(255,0,255,0.9), 0 0 50px rgba(0,255,255,0.7);
 }
 
 /* --- Responsive --- */
